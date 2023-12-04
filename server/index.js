@@ -13,7 +13,7 @@ const PORT = process.env.PORT || process.env.PORT_NODE;
 const app = express();
 
 const corsOptions = {
-     origin: "http://localhost:5173", // Allow requests from this origin
+     origin: "https://avion-client.vercel.app", // Allow requests from this origin
      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
      credentials: true, // Allow sending cookies and other credentials
      optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
