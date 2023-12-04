@@ -2,7 +2,7 @@
      <div class="product">
           <div class="product-elements">
                <div class="product-element" v-for="element in products">
-                    <img class="product-element__image" :src="element.img" :alt="element.title">
+                    <img class="product-element__image" :src="element.images[0]" :alt="element.slug">
 
                     <div class="product-element__text">
                          <span class="product-element__text__name">{{ element.title }}</span>
