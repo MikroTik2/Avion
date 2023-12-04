@@ -1,7 +1,7 @@
 <template>
      <div class="product">
           <div class="product-elements">
-               <div class="product-element" v-for="(element, index) in productItems" :key="index">
+               <div class="product-element" v-for="element in products">
                     <img class="product-element__image" :src="element.img" :alt="element.title">
 
                     <div class="product-element__text">
@@ -18,14 +18,21 @@
 </template>
 
 <script setup>
-     import { ref } from 'vue';
+     import { ref, onMounted } from 'vue';
+     // import api from '@/config/api.js';
+     import axios from 'axios';
 
-     const productItems = ref([
-          { img: "/img/product-1.png", title: "The Dandy chair", price: 250 },
-          { img: "/img/product-2.png", title: "Rustic Vase Set", price: 155 },
-          { img: "/img/product-3.png", title: "The Silky Vase", price: 125 },
-          { img: "/img/product-4.png", title: "The Lucy Lamp", price: 399 },
-     ]);
+     const products = ref([]);
+
+     onMounted(async () => {
+          try {
+               const response = await axios.get("https://avion-six.vercel.app/api/product/all");
+               products.value = response.data;
+          } catch (error) {
+               console.error("Error fetching data:", error);
+          }
+     });
+
 </script>
 
 <style lang="scss" scoped>
