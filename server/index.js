@@ -12,7 +12,6 @@ const productRoute = require("./routes/productRoute.js");
 
 const PORT = process.env.PORT || process.env.PORT_NODE;
 const app = express();
-
 app.use(cors({ origin: "https://avion-client.vercel.app", optionsSuccessStatus: 204, methods: "GET,HEAD,PUT,PATCH,POST,DELETE", credentials: true }));
 app.use(morgan("dev"));
 app.use(bodyParser.json());
