@@ -2,14 +2,14 @@
      <div class="product">
           <div class="product-elements">
                <div class="product-element" v-for="element in products" :key="element._id">
-                    <router-link class="product-element__image-container" :to="`/product/${element._id}`">
+                    <a class="product-element__image-container" :href="`/product/${element._id}`">
                          <img class="product-element__image" :src="element.images[0]" :alt="element.slug">
-                    </router-link>
+                    </a>
 
-                    <router-link :to="`/product/${element._id}`" class="product-element__text">
+                    <a :href="`/product/${element._id}`" class="product-element__text">
                          <span class="product-element__text__name">{{ element.title }}</span>
                          <span class="product-element__text__price">£{{ element.price }}</span>
-                    </router-link>
+                    </a>
                </div>
           </div>
 
