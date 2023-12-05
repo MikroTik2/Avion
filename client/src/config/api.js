@@ -11,8 +11,18 @@ export default {
           try {
 
                const response = await HTTP.get("/product/all");
-               console.log(response.data);
                return response.data;
+
+          } catch (error) {
+               throw error;
+          };
+     },
+
+     async getProduct(productId) {
+          try {
+
+               const response = await HTTP.get(`/product/${productId}`);
+               return response.data
 
           } catch (error) {
                throw error;

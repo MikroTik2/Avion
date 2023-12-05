@@ -1,13 +1,15 @@
 <template>
      <div class="product">
           <div class="product-elements">
-               <div class="product-element" v-for="element in products">
-                    <img class="product-element__image" :src="element.images[0]" :alt="element.slug">
+               <div class="product-element" v-for="element in products" :key="element._id">
+                    <router-link class="product-element__image-container" :to="`/product/${element._id}`">
+                         <img class="product-element__image" :src="element.images[0]" :alt="element.slug">
+                    </router-link>
 
-                    <div class="product-element__text">
+                    <router-link :to="`/product/${element._id}`" class="product-element__text">
                          <span class="product-element__text__name">{{ element.title }}</span>
                          <span class="product-element__text__price">£{{ element.price }}</span>
-                    </div>
+                    </router-link>
                </div>
           </div>
 
@@ -19,15 +21,14 @@
 
 <script setup>
      import { ref, onMounted } from 'vue';
-     // import api from '@/config/api.js';
-     import axios from 'axios';
+     import api from '@/config/api.js';
 
      const products = ref([]);
 
      onMounted(async () => {
           try {
-               const response = await axios.get("https://avion-six.vercel.app/api/product/all");
-               products.value = response.data;
+               const response = await api.getAllProducts();
+               products.value = response;
           } catch (error) {
                console.error("Error fetching data:", error);
           }
@@ -50,9 +51,21 @@
                display: grid;
                row-gap: 24px;
 
+               &__image-container {
+                    overflow: hidden;
+               }
+
                &__image {
                     object-fit: cover;
                     cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1);
+                    transition: all .5s;
+
+                    &:hover {
+                         transform: scale(1.1);
+                    }
                }
 
                &__text {

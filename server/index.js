@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
+const morgan = require("morgan");
 const dbConnect = require("./config/dbConnect.js");
 const { notFound, errorHandler } = require("./middleware/errorHandler.js");
 
@@ -12,14 +13,8 @@ const productRoute = require("./routes/productRoute.js");
 const PORT = process.env.PORT || process.env.PORT_NODE;
 const app = express();
 
-const corsOptions = {
-     origin: "https://avion-client.vercel.app", // Allow requests from this origin
-     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-     credentials: true, // Allow sending cookies and other credentials
-     optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
-app.use(cors(corsOptions));
+app.use(cors({ origin: "https://avion-client.vercel.app", optionsSuccessStatus: 204, methods: "GET,HEAD,PUT,PATCH,POST,DELETE", credentials: true }));
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
