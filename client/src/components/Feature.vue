@@ -31,6 +31,14 @@
      .about {
           padding: 80px;
 
+          @media only screen and (max-width: 1340px) {
+               padding:  80px 25px;
+          }
+
+          @media only screen and (max-width: 768px) {
+               padding:  48px 25px;
+          }
+
           &-title {
                color: #2A254B;
                font-family: 'Clash Display', sans-serif;
@@ -38,18 +46,34 @@
                font-weight: 300;
                text-align: center;
                margin-bottom: 35px;
+
+               @media only screen and (max-width: 768px) {
+                    text-align: left;
+               }
           }
 
           &-elements {
                display: grid;
                grid-template-columns: repeat(4, 1fr);
                gap: 20px;
+
+               @media only screen and (max-width: 1275px) {
+                    grid-template-columns: repeat(2, 1fr);
+               }
+
+               @media only screen and (max-width: 768px) {
+                    grid-template-columns: repeat(1, 1fr);
+               }
           }
 
           &-element {
 
                padding: 48px;
                background: #f9f9f9;
+
+               @media only screen and (max-width: 768px) {
+                    padding: 36px 24px;
+               }
 
                &-content {
                     display: flex;

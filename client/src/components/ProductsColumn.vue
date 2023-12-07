@@ -41,10 +41,26 @@
 
           padding: 20px 80px;
 
+          @media only screen and (max-width: 1340px) {
+               padding:  20px 25px;
+          }
+
+          @media only screen and (max-width: 768px) {
+               padding:  20px 25px;
+          }
+
           &-elements {
                display: grid;
                grid-template-columns: repeat(4, 1fr);
                gap: 20px;
+
+               @media only screen and (max-width: 768px) {
+                    grid-template-columns: repeat(2, 1fr);
+               }
+
+               @media only screen and (max-width: 390px) {
+                    grid-template-columns: repeat(1, 1fr);
+               }
           }
 
           &-element {
@@ -109,6 +125,10 @@
                     border: none;
                     font-weight: 300;
                     cursor: pointer;
+
+                    @media only screen and (max-width: 768px) {
+                         width: 100%;
+                    }
                }
           }
      }

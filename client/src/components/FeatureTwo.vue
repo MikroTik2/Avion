@@ -28,6 +28,18 @@
           grid-template-columns: repeat(2, 1fr);
           gap: 20px;
 
+          @media only screen and (max-width: 1340px) {
+               padding:  32px 25px;
+          }
+
+          @media only screen and (max-width: 1124px) {
+               grid-template-columns: repeat(1, 1fr);
+          }
+
+          @media only screen and (max-width: 768px) {
+               padding:  32px 25px;
+          }
+
           &-left {
 
                background: #2A254B;
@@ -35,6 +47,11 @@
                display: flex;
                flex-direction: column;
                justify-content: space-between;
+
+               @media only screen and (max-width: 1124px) {
+                    padding: 36px 32px 30px 32px;
+                    gap: 56px;
+               }
 
                &-content {
 
@@ -44,6 +61,10 @@
                          font-size: 32px;
                          font-weight: 300;
                          margin-bottom: 12px;
+
+                         @media only screen and (max-width: 768px) {
+                              font-size: 24px;
+                         }
                     }
 
                     &__description {
@@ -51,6 +72,10 @@
                          font-family: 'Satoshi', sans-serif;
                          font-size: 18px;
                          font-weight: 300;
+
+                         @media only screen and (max-width: 768px) {
+                              font-size: 16px;
+                         }
                     }
                }
 
@@ -64,6 +89,10 @@
                     font-size: 16px;
                     font-weight: 300;
                     cursor: pointer;
+
+                    @media only screen and (max-width: 768px) {
+                         width: 100%;
+                    }
                }
                
           }

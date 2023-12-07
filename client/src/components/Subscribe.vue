@@ -44,12 +44,22 @@
                margin: 0 auto;
                text-align: center;
 
+               @media only screen and (max-width: 768px) {
+                    max-width: 100%;
+                    padding: 25px;
+                    text-align: left;
+               }
+
                &__title {
                     color: #FFF;
                     font-family: 'Clash Display', sans-serif;
                     font-size: 32px;
                     font-weight: 300;
                     margin-bottom: 12px;
+
+                    @media only screen and (max-width: 768px) {
+                         font-size: 24px;
+                    }
                }
 
                &__description {
@@ -57,6 +67,10 @@
                     font-family: 'Satoshi', sans-serif;
                     font-size: 18px;
                     font-weight: 300;
+
+                    @media only screen and (max-width: 768px) {
+                         font-size: 16px;
+                    }
                }
 
                &-elements {
@@ -64,6 +78,12 @@
                     justify-content: center;
                     margin-top: 30px;
                     gap: 35px;
+
+                    @media only screen and (max-width: 768px) {
+                         display: grid;
+                         justify-content: flex-start;
+                         gap: 8px;
+                    }
                }
 
                &-element {
@@ -77,6 +97,11 @@
                     display: flex;
                     justify-content: center;
                     margin-top: 40px;
+
+                    @media only screen and (max-width: 768px) {
+                         justify-content: flex-start;
+                         margin-top: 28px;
+                    }
 
                     &__btn {
                          display: flex;

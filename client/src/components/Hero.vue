@@ -8,6 +8,8 @@
 
                <button class="hero-content__btn">View collection</button>
           </div>
+
+          <img class="hero__image" src="/img/hero-mobile.jpg" alt="hero">
      </div>
 </template>
 
@@ -23,7 +25,16 @@
           display: flex;
           align-items: center;
           justify-content: flex-end;
-          padding-right: 80px;
+          padding: 80px;
+
+          @media only screen and (max-width: 768px) {
+               background: transparent;
+               padding: 0;
+               align-items: flex-start;
+               justify-content: center;
+               height: auto;
+               display: grid;
+          }
 
           &-content {
                width: 630px;
@@ -33,6 +44,14 @@
                display: flex;
                flex-direction: column;
                justify-content: space-between;
+
+               @media only screen and (max-width: 768px) {
+                    padding: 50px 25px;
+                    justify-content: inherit;
+                    row-gap: 32px;
+                    height: auto;
+                    width: 100%;
+               }
 
                &__btn {
                     width: 170px;
@@ -46,6 +65,10 @@
                     font-family: 'Satoshi', sans-serif;
                     font-size: 16px;
                     font-weight: 300;
+
+                    @media only screen and (max-width: 768px) {
+                         width: 100%;
+                    }
                }
 
                &__text {
@@ -56,6 +79,10 @@
                          font-size: 32px;
                          font-weight: 300;
                          margin-bottom: 20px;
+
+                         @media only screen and (max-width: 768px) {
+                              font-size: 24px;
+                         }
                     }
 
                     &-description {
@@ -63,8 +90,22 @@
                          font-family: 'Satoshi', sans-serif;
                          font-size: 18px;
                          font-weight: 300;
+
+                         @media only screen and (max-width: 768px) {
+                              font-size: 16px;
+                         }
                     }
                     
+               }
+          }
+
+          &__image {
+               display: none;
+
+               @media only screen and (max-width: 768px) {
+                    display: flex;
+                    width: 100%;
+                    object-fit: contain;
                }
           }
      }
