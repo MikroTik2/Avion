@@ -13,8 +13,7 @@ const productRoute = require("./routes/productRoute.js");
 
 const PORT = process.env.PORT || process.env.PORT_NODE;
 const app = express();
-//  origin: "https://avion-client.vercel.app",
-app.use(cors({ origin: "http://localhost:5173", optionsSuccessStatus: 204, methods: "GET,HEAD,PUT,PATCH,POST,DELETE", credentials: true }));
+app.use(cors({ origin: "https://avion-client.vercel.app", optionsSuccessStatus: 204, methods: "GET,HEAD,PUT,PATCH,POST,DELETE", credentials: true }));
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
