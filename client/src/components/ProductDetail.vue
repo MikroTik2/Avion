@@ -68,17 +68,25 @@
 <style lang="scss" scoped>
      .product {
           max-width: 1440px;
-          padding: 50px 80px;
           margin: 0 auto;
           background: #F9F9F9;
           display: grid;
           gap: 65px;
           grid-template-columns: repeat(2, 1fr);
 
+          @media only screen and (max-width: 1024px) {
+               grid-template-columns: repeat(1, 1fr);
+               gap: 0;
+          }
+
           &-left {
 
-               width: 607px;
+               width: 100%;
                height: 661px;
+
+               @media only screen and (max-width: 768px) {
+                    height: 380px;
+               }
 
                &__image {
 
@@ -89,10 +97,18 @@
           }
 
           &-right {
-               
+               padding: 50px 80px 50px 0;
                display: flex;
                flex-direction: column;
                justify-content: space-between;
+
+               @media only screen and (max-width: 1340px) {
+                    padding: 25px 25px 25px 0;
+               }
+
+               @media only screen and (max-width: 1024px) {
+                    padding: 25px;
+               }
 
                &-top {
                     margin-top: 30px;
@@ -100,13 +116,22 @@
                     display: flex;
                     flex-direction: column;
                     gap: 16px;
-                    border-bottom: 1px solid #EBE8F4;;
+                    border-bottom: 1px solid #EBE8F4;
+
+                    @media only screen and (max-width: 768px) {
+                         margin-top: 0;
+                         padding-bottom: 12px;
+                    }
                                    
                     &__title {
                          color: #2A254B;
                          font-family: 'Clash Display', sans-serif;
                          font-size: 36px;
                          font-weight: 300;
+
+                         @media only  screen and (max-width: 768px) {
+                              font-size: 24px;
+                         }
                     }
 
                     &__price {
@@ -114,6 +139,10 @@
                          font-family: 'Satoshi', sans-serif;
                          font-size: 24px;
                          font-weight: 300;
+
+                         @media only  screen and (max-width: 768px) {
+                              font-size: 20px;
+                         }
                     }
                }
 
@@ -171,6 +200,12 @@
                     display: flex;
                     gap: 16px;
                     margin-bottom: 30px;
+                    margin-top: 24px;
+
+                    @media only screen and (max-width: 768px) {
+                         display: grid;
+
+                    }
 
                     &__cart { 
                          width: 143px;
@@ -185,6 +220,10 @@
                          font-weight: 300;
                          border: none;
                          cursor: pointer;
+
+                         @media only screen and (max-width: 768px) {
+                              width: 100%;
+                         }
                     }
 
                     &__wishlist {
@@ -197,6 +236,10 @@
                          font-size: 16px;
                          font-weight: 300;
                          cursor: pointer;
+
+                         @media only screen and (max-width: 768px) {
+                              width: 100%;
+                         }
                     }
                }
           }

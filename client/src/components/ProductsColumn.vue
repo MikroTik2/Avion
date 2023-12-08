@@ -1,5 +1,5 @@
 <template>
-     <div class="product">
+     <div class="product container">
           <div class="product-elements">
                <div class="product-element" v-for="element in products" :key="element._id">
                     <a class="product-element__image-container" :href="`/product/${element._id}`">

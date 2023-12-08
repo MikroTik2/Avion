@@ -37,7 +37,7 @@
           left: -350px;
           background: #fff;
           border-right: 1px solid rgba(0, 0, 0, 0.10);
-          transition: all .5s;
+          transition: all .3s;
           z-index: 10;
 
           @media only screen and (max-width: 400px) {

@@ -17,7 +17,7 @@
                <router-link class="header-top-center" to="/">Avion</router-link>
 
                <div class="header-top-right">
-                    <img class="header-top-right__cart" src="/svg/search.svg" alt="search">
+                    <img class="header-top-right__cart" src="/svg/cart.svg" alt="cart">
                     <img @click="toggleMenu" class="header-top-right__profile" style="width: 20px; height: 20px;" src="/svg/menu.svg" alt="menu">
                </div>
           </div>

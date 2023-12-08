@@ -30,7 +30,7 @@
              </div>
            </div>
            <div class="footer-subscribe">
-             <input class="footer-subscribe__input" type="text">
+             <input class="footer-subscribe__input" placeholder="your@email.com" type="text">
              <button class="footer-subscribe__btn">Sign Up</button>
            </div>
          </div>
