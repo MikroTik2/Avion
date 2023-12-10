@@ -22,6 +22,14 @@ let productSchema = new mongoose.Schema({
           type:[String],
           required:true,
      },
+     author:{
+          type:String,
+          required:true,
+     },
+     productType:{
+          type:String,
+          required:true,
+     },
      quantity:{
           type:Number,
           default: 1,

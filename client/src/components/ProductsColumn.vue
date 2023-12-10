@@ -14,7 +14,7 @@
           </div>
 
           <div class="product_collection">
-               <button class="product_collection_btn" type="button">View collection</button>
+               <a href="/collections" class="product_collection_btn" type="button">View collection</a>
           </div>
      </div>
 </template>
@@ -26,12 +26,7 @@
      const products = ref([]);
 
      onMounted(async () => {
-          try {
-               const response = await api.getAllProducts();
-               products.value = response;
-          } catch (error) {
-               console.error("Error fetching data:", error);
-          }
+          products.value = await api.getProduct4Column();
      });
 
 </script>

@@ -28,4 +28,15 @@ export default {
                throw error;
           };
      },
+
+     async getProduct4Column() {
+          try {
+
+               const response = await HTTP.get("/product/all?page=1&limit=4");
+               return response.data;
+
+          } catch (error) {
+               throw error;
+          };
+     },
 };

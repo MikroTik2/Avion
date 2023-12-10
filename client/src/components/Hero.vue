@@ -6,7 +6,7 @@
                     <span class="hero-content__text-description">Shop the new Spring 2022 collection today</span>
                </div>
 
-               <button class="hero-content__btn">View collection</button>
+               <a class="hero-content__btn" href="/collections">View collection</a>
           </div>
 
           <img class="hero__image" src="/img/hero-mobile.jpg" alt="hero">
